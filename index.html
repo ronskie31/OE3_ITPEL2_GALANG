@@ -1,0 +1,143 @@
+//Justin Ron J. Galang //BSIT 3-1
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Budget Planner APP</title>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+    <style>
+        h1 {
+            font-size: 22px;
+        }
+        
+        h2 {}
+        
+        h4 {
+            color: black;
+            font-size: 22px;
+        }
+        
+        ion-title {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="dark">
+                <ion-buttons slot="primary">
+                </ion-buttons>
+                <ion-title class="ion-text-center">Budget planner</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <!--App main content-->
+        <ion-content>
+            <!--Grid component-->
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <!--Card component-->
+                        <ion-card color="danger">
+                            <ion-card-header>
+                                <ion-card-title class="ion-text-center">
+                                    <h1>New Expenses</h1>
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+
+                                <!--1st input-->
+                                <ion-item>
+                                    <ion-label color="dark" position="floating"> Expense Reason</ion-label>
+                                    <ion-input color="dark" type="text" id="input-reason" placeholder="Enter Reason"></ion-input>
+                                </ion-item>
+
+                                <!--2nd input-->
+                                <ion-item>
+                                    <ion-label color="dark" position="floating"> Expense Amount</ion-label>
+                                    <ion-input color="dark" type="number" id="input-amount" placeholder="Enter Amount"></ion-input>
+                                </ion-item>
+
+                                <!--Button-->
+                                <br>
+                                <div>
+
+                                    <ion-button id="btn-add" color="dark" expand="block" shape="round">
+                                        <ion-icon slot="start" name="add-circle-outline"></ion-icon> Add Expense </ion-button>
+
+                                    <ion-button id="btn-clear" fill="outline" color="light" expand="block" shape="round">
+                                        <ion-icon slot="start" name="close-circle-outline"></ion-icon> Clear </ion-button>
+                                </div>
+                                <br>
+
+
+
+                            </ion-card-content>
+                        </ion-card>
+                        <!--END Card component-->
+
+
+                    </ion-col>
+                </ion-row>
+
+                <!--output using list component-->
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size-md="6" offset-md="3">
+                            <!--Card component-->
+                            <ion-card color="medium">
+                                <ion-card-header>
+                                    <ion-card-title class="ion-text-center">
+                                        <h1>Expenses List</h1>
+                                    </ion-card-title>
+                                </ion-card-header>
+                                <ion-card-header>
+                                    <ion-card-title class="ion-text-center">
+                                        <h1></h1>
+                                    </ion-card-title>
+                                </ion-card-header>
+
+                                <ion-row>
+                                    <ion-col size-md="6" offset-md="3">
+                                        <ion-list color="danger" id="expenses-list">
+                                        </ion-list>
+                                    </ion-col>
+                                </ion-row>
+
+                                <ion-row>
+                                    <ion-col size-md="6" offset-md="3">
+                                        <p margin>
+                                            <h4>Total Expenses: ₱
+                                                <span id="total-expenses"></span></h4>
+                                        </p>
+                                    </ion-col>
+                                </ion-row>
+
+                                </ion-card-content>
+                            </ion-card>
+
+                            <!-- END output using list component-->
+
+                </ion-grid>
+                <!-- END Grid component-->
+        </ion-content>
+        <!--END App main content-->
+        <ion-alert></ion-alert>
+    </ion-app>
+
+    <!--Javascript-->
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
